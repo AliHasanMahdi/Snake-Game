@@ -17,16 +17,13 @@ public class SnakeController : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
-        if (Input.GetKeyDown(KeyCode.W) && direction != Vector3.back)
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && direction != Vector3.back)
             direction = Vector3.forward;
-
-        if (Input.GetKeyDown(KeyCode.S) && direction != Vector3.forward)
+        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && direction != Vector3.forward)
             direction = Vector3.back;
-
-        if (Input.GetKeyDown(KeyCode.A) && direction != Vector3.right)
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && direction != Vector3.right)
             direction = Vector3.left;
-
-        if (Input.GetKeyDown(KeyCode.D) && direction != Vector3.left)
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && direction != Vector3.left)
             direction = Vector3.right;
     }
 
